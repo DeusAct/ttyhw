@@ -15,7 +15,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-
         Map <String, Integer> wordCounter = new HashMap<>();
         Scanner s = new Scanner(new File("The_Last_of_the_Mohicans-James_Fenimore_Cooper.txt"));
         while (s.hasNext()) {
