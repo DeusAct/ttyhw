@@ -3,14 +3,16 @@ import java.util.*;
 
 public class Main {
 
+
     public static void main(String[] args) throws IOException {
+        String pathName = "IdeaProjects/TextProcessing/The_Last_of_the_Mohicans-James_Fenimore_Cooper.txt";
 
         /**
          * Ex. 1:
          */
 
         Map<String, Integer> wordCounter = new HashMap<>();
-        Scanner s = new Scanner(new File("IdeaProjects/TextProcessing/The_Last_of_the_Mohicans-James_Fenimore_Cooper.txt"));
+        Scanner s = new Scanner(new File(pathName));
         while (s.hasNext()) {
             String next = s.next();
             Integer count = wordCounter.get(next);
@@ -50,20 +52,17 @@ public class Main {
 
         List<Character> alphabet = new ArrayList<>();
         List<String> words = new ArrayList<>();
-        for(Character c = 'a'; c <= 'z'; c++) {
+        for (Character c = 'a'; c <= 'z'; c++) {
             alphabet.add(c);
         }
         System.out.println(alphabet);
-        s = new Scanner(new File("IdeaProjects/TextProcessing/The_Last_of_the_Mohicans-James_Fenimore_Cooper.txt"));
+        s = new Scanner(new File(pathName));
 
         while (s.hasNext()) {
             String next = s.next();
-            // []+  - 1 or more times
-            // []* - 0 or more times
-
             words.add(next);
 
-            if (next.startsWith("'")  || next.endsWith("'") || next.endsWith(",") || next.endsWith(".")) {
+            if (next.startsWith("'") || next.endsWith("'") || next.endsWith(",") || next.endsWith(".")) {
                 next = next.replace("'", "");
                 next = next.replace(".", "");
                 next = next.replace(",", "");
@@ -77,7 +76,6 @@ public class Main {
                     }
                 }
             }
-
         }
         s.close();
         System.out.println(wordCounter.entrySet());
